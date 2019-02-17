@@ -1,3 +1,8 @@
+/*
+    peakyDicers
+    Feb 17, 2019
+*/
+
 let list = [
     'ytp-chrome-top',
     'ytp-chrome-bottom',
@@ -25,24 +30,6 @@ let unHideHud = () => {
         element[0].classList.remove('hideMe');
     })
 }
-
-let createButton = () => {
-    let btn = document.getElementById("shadow-gear-btn");
-    if (btn) return;
-
-    let toggleBtn = document.createElement("BUTTON");
-    toggleBtn.id = "shadow-gear-btn"
-    toggleBtn.classList.add('shadowGearBtn');
-
-    let text = document.createTextNode("toggle shadow gear");
-    toggleBtn.appendChild(text); 
-    toggleBtn.addEventListener("click", toggle);
-    
-    let element = document.getElementsByClassName("ytd-video-secondary-info-renderer");
-    if (element.length === 0) return;
-    element[0].appendChild(toggleBtn);
-}
-setInterval(createButton, 5000);
 
 let toggle = () => {
     if (hidden)
