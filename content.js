@@ -38,6 +38,7 @@ let createButton = () => {
     toggleBtn.appendChild(text); 
     toggleBtn.addEventListener("click", toggle);
     
+    let element = document.getElementsByClassName("ytd-video-secondary-info-renderer");
     if (element.length === 0) return;
     element[0].appendChild(toggleBtn);
 }
