@@ -16,26 +16,15 @@ let list = [
 
 let hidden = false;
 
-let hideHud = () => {
-    list.forEach(item => {
-        let element = document.getElementsByClassName(item);
-        if (!element[0]) return;
-        element[0].classList.add('hideMe');
-    })
-}
-let unHideHud = () => {
-    list.forEach(item => {
-        let element = document.getElementsByClassName(item);
-        if (!element[0]) return;
-        element[0].classList.remove('hideMe');
-    })
-}
-
 let toggle = () => {
-    if (hidden)
-        unHideHud();
-    else
-        hideHud();
+    list.forEach(item => {
+        let element = document.getElementsByClassName(item);
+        if (!element[0]) return;
+        if (hidden)
+            element[0].classList.remove('hideMe');
+        else
+            element[0].classList.add('hideMe');
+    });
     hidden = !hidden;
 }
 
